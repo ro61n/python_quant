@@ -1,0 +1,100 @@
+Examples of Response formats for queries
+* More information can be found on Binance's GitHub API page: https://github.com/binance/binance-spot-api-docs/blob/master/rest-api.md
+
+#A - "Symbol price ticker" - response:
+[
+  {
+    "symbol": "LTCBTC",
+    "price": "4.00000200"
+  },
+  {
+    "symbol": "ETHBTC",
+    "price": "0.07946600"
+  }
+]
+
+*if symbol is specified then it will return as a dictionary - excluding the outer list
+
+#B - "24hr ticker price change statistics" - response:
+[
+  {
+    "symbol": "BNBBTC",
+    "priceChange": "-94.99999800",
+    "priceChangePercent": "-95.960",
+    "weightedAvgPrice": "0.29628482",
+    "prevClosePrice": "0.10002000",
+    "lastPrice": "4.00000200",
+    "lastQty": "200.00000000",
+    "bidPrice": "4.00000000",
+    "askPrice": "4.00000200",
+    "openPrice": "99.00000000",
+    "highPrice": "100.00000000",
+    "lowPrice": "0.10000000",
+    "volume": "8913.30000000",
+    "quoteVolume": "15.30000000",
+    "openTime": 1499783499040,
+    "closeTime": 1499869899040,
+    "firstId": 28385,   // First tradeId
+    "lastId": 28460,    // Last tradeId
+    "count": 76         // Trade count
+  }
+]
+
+#C - "Symbol order book ticker" - response:
+[
+  {
+    "symbol": "LTCBTC",
+    "bidPrice": "4.00000000",
+    "bidQty": "431.00000000",
+    "askPrice": "4.00000200",
+    "askQty": "9.00000000"
+  },
+  {
+    "symbol": "ETHBTC",
+    "bidPrice": "0.07946700",
+    "bidQty": "9.00000000",
+    "askPrice": "100000.00000000",
+    "askQty": "1000.00000000"
+  }
+]
+
+#D - "Order book" - response:
+{
+  "lastUpdateId": 1027024,
+  "bids": [
+    [
+      "4.00000000",     // PRICE
+      "431.00000000"    // QTY
+    ]
+  ],
+  "asks": [
+    [
+      "4.00000200",
+      "12.00000000"
+    ]
+  ]
+}
+
+#E - "Kline/Candlestick data" - response:
+[
+  [
+    1499040000000,      // Open time
+    "0.01634790",       // Open
+    "0.80000000",       // High
+    "0.01575800",       // Low
+    "0.01577100",       // Close
+    "148976.11427815",  // Volume
+    1499644799999,      // Close time
+    "2434.19055334",    // Quote asset volume
+    308,                // Number of trades
+    "1756.87402397",    // Taker buy base asset volume
+    "28.46694368",      // Taker buy quote asset volume
+    "17928899.62484339" // Ignore.
+  ]
+]
+
+
+
+
+
+
